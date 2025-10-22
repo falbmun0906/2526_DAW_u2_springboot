@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - CRUD Spring Boot</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Gestión de Usuarios</h1>
+            <p class="subtitle">Aplicación CRUD con Spring Boot y Docker</p>
+        </header>
+
+        <!-- Mensajes de notificación -->
+        <div th:if="${message}" class="alert alert-success">
+            <span th:text="${message}"></span>
+        </div>
+        <div th:if="${error}" class="alert alert-error">
+            <span th:text="${error}"></span>
+        </div>
+
+        <div class="actions">
+            <a th:href="@{/users/new}" class="btn btn-primary">➕ Crear Nuevo Usuario</a>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Edad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${#lists.isEmpty(users)}">
+                        <td colspan="5" class="empty-message">
+                            No hay usuarios registrados. ¡Crea el primero!
+                        </td>
+                    </tr>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.nombre}"></td>
+                        <td th:text="${user.email}"></td>
+                        <td th:text="${user.edad}"></td>
+                        <td>
+                            <a th:href="@{/users/edit/{id}(id=${user.id})}" class="btn btn-edit">✏️ Editar</a>
+                            <a th:href="@{/users/delete/{id}(id=${user.id})}" 
+                               class="btn btn-delete"
+                               onclick="return confirm('¿Estás seguro de eliminar este usuario?');">🗑️ Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>© 2025 - Aplicación de ejemplo para Despliegue de Aplicaciones Web</p>
+            <p>API REST disponible en: <code>/api/users</code></p>
+        </footer>
+    </div>
+</body>
+</html>

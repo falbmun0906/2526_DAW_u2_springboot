@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${user.id != null ? 'Editar Usuario' : 'Nuevo Usuario'}">Formulario Usuario</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 th:text="${user.id != null ? '✏️ Editar Usuario' : '➕ Nuevo Usuario'}">Formulario</h1>
+        </header>
+
+        <div class="form-container">
+            <form th:action="${user.id != null ? '/users/' + user.id : '/users'}" 
+                  th:object="${user}" 
+                  method="post">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" 
+                           id="nombre" 
+                           th:field="*{nombre}" 
+                           placeholder="Ingrese el nombre"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" 
+                           id="email" 
+                           th:field="*{email}" 
+                           placeholder="correo@ejemplo.com"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" 
+                           id="edad" 
+                           th:field="*{edad}" 
+                           placeholder="Ingrese la edad"
+                           min="1" 
+                           max="150"
+                           required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <span th:text="${user.id != null ? '💾 Actualizar' : '➕ Crear'}"></span>
+                    </button>
+                    <a th:href="@{/}" class="btn btn-secondary">🔙 Cancelar</a>
+                </div>
+            </form>
+        </div>
+
+        <footer>
+            <p>© 2025 - Aplicación de ejemplo para Despliegue de Aplicaciones Web</p>
+        </footer>
+    </div>
+</body>
+</html>

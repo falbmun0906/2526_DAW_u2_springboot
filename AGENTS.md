@@ -101,18 +101,20 @@ Estructura actual del proyecto (usando Gradle):
 
 ## Pasos de Implementación
 1. ✅ Crear estructura del proyecto Spring Boot con Gradle
-2. Implementar modelo de datos (User)
-3. Implementar servicio de persistencia en archivo JSON
-4. Implementar controlador REST (API)
-5. Implementar controlador Web
-6. Añadir dependencia de Thymeleaf y crear vistas básicas
-7. Probar la aplicación localmente
-8. Crear Dockerfile
-9. Crear docker-compose.yml
-10. Crear .dockerignore
-11. Construir imagen Docker
-12. Probar el despliegue en contenedor Docker
-13. Documentar todo el proceso en README.md
+2. ✅ Implementar modelo de datos (User)
+3. ✅ Implementar servicio de persistencia en archivo JSON
+4. ✅ Implementar controlador REST (API)
+5. ✅ Implementar controlador Web
+6. ✅ Añadir dependencia de Thymeleaf y crear vistas básicas
+7. ✅ Probar la aplicación localmente
+8. ✅ Crear Dockerfile
+9. ✅ Crear docker-compose.yml
+10. ✅ Crear .dockerignore
+11. ✅ Construir imagen Docker
+12. ✅ Probar el despliegue en contenedor Docker
+13. ✅ Documentar todo el proceso en README.md
+
+**Estado del Proyecto: COMPLETADO ✅**
 
 ## Comandos Gradle
 ```bash

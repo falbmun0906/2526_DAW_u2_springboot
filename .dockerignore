@@ -1,0 +1,33 @@
+# Archivos de Git
+.git
+.gitignore
+.gitattributes
+
+# Directorio de build
+build/
+.gradle/
+
+# Archivos de IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.classpath
+.project
+.settings/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Documentación y otros archivos
+README.md
+AGENTS.md
+HELP.md
+*.md
+
+# Datos locales
+data/
+*.json
