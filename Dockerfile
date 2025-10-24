@@ -4,15 +4,13 @@ FROM gradle:8.5-jdk17 AS builder
 # Establecer directorio de trabajo
 WORKDIR /app
 
-# Copiar archivos de configuración de Gradle
+# Copiar archivos de configuración de Gradle y código fuente
 COPY build.gradle settings.gradle gradlew ./
 COPY gradle ./gradle
-
-# Copiar código fuente
 COPY src ./src
 
-# Construir la aplicación (genera el archivo WAR)
-RUN ./gradlew bootWar --no-daemon
+# Dar permisos de ejecución a gradlew y construir la aplicación
+RUN chmod +x gradlew && ./gradlew bootWar --no-daemon
 
 # Etapa 2: Imagen final con Tomcat
 FROM tomcat:10.1-jdk17
