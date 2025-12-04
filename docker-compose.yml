@@ -11,7 +11,7 @@ services:
       dockerfile: Dockerfile
     
     # Nombre de la imagen
-    image: springboot-crud-app
+    image: springboot-crud-app:latest
     
     # Mapeo de puertos (host:contenedor)
     ports:
