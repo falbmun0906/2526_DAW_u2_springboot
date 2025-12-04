@@ -26,5 +26,5 @@ jobs:
       - name: Build and push images
         run: |
           docker compose build
-          docker tag 2526_DAW_u2_springboot falbmun0906/2526_daw_u2_springboot:latest
-          docker push falbmun0906/2526_daw_u2_springboot:latest
+          docker tag springboot-users-crud falbmun0906/springboot-users-crud:latest
+          docker push falbmun0906/springboot-users-crud:latest
