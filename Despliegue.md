@@ -6,6 +6,8 @@ Esta práctica consiste en la creación y subida de imágenes a partir de un pro
 
 Se ha editado el fichero en ./src/main/resources/templates/index.html para añadir mi nombre y apellidos.
 
+https://github.com/falbmun0906/2526_DAW_u2_springboot/blob/40a41d88d2ef36426c5800cf9a406b263d5c94a9/src/main/resources/templates/index.html#L12
+
 ### Automatización de la creación y subida de imágenes.
 
 Para esta parte:
