@@ -26,5 +26,5 @@ jobs:
       - name: Build and push images
         run: |
           docker compose build
-          docker tag springboot-crud-app falbmun0906/springboot-users-crud:latest
+          docker tag springboot-crud-app falbmun0906/springboot-crud-app:latest
           docker push falbmun0906/springboot-crud-app:latest
